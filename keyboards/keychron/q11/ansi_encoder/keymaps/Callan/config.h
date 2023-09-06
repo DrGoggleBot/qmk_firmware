@@ -20,3 +20,6 @@
 #define RGB_MATRIX_LED_COUNT 89
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 23
+#define TAPPING_TERM 175
+#define PERMISSIVE_HOLD
+#define BOTH_SHIFTS_TURN_ON_CAPS_WORD

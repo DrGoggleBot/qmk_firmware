@@ -1,5 +1,8 @@
 /*
+This is the c configuration file for the keymap
+
 Copyright 2012 Jun Wako <wakojun@gmail.com>
+Copyright 2015 Jack Humbert
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,26 +20,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#define AUDIO_VOICES
-#define AUDIO_PIN C6
+//#define USE_MATRIX_I2C
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+/* Select hand configuration */
 
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
+// #define MASTER_LEFT
+// #define MASTER_RIGHT
+#define EE_HANDS
 
-/* disable debug print */
-// #define NO_DEBUG
+#define QUICK_TAP_TERM 0
+#define TAPPING_TERM 175
+#define PERMISSIVE_HOLD
 
-/* disable print */
-// #define NO_PRINT
+#ifdef RGBLIGHT_ENABLE
+    #undef RGBLED_NUM
+    #define RGBLED_NUM 27
+    #define RGBLIGHT_SLEEP
+    #define RGBLIGHT_SPLIT
+    #define RGBLIGHT_LIMIT_VAL 120
+    #define RGBLIGHT_HUE_STEP 10
+    #define RGBLIGHT_SAT_STEP 17
+    #define RGBLIGHT_VAL_STEP 17
+    #define RGBLIGHT_LAYERS
+#endif
 
-// /* disable action features */
-// #define NO_ACTION_LAYER
-// #define NO_ACTION_TAPPING
-// #define NO_ACTION_ONESHOT
+#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"

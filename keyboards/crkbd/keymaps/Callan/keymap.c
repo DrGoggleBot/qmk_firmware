@@ -40,7 +40,6 @@ enum crkbd_layers {
 #define HR_L LALT_T(KC_L)
 #define HR_SCLN RCTL_T(KC_SCLN)
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -50,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_ENT,   LOWER,  KC_SPC,      KC_BSPC,   RAISE,  NAV
+                                          KC_ENT,   KC_SPC,  LOWER,      RAISE,   KC_BSPC,  NAV
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -115,6 +114,9 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   return 500;
 }
 
+void matrix_scan_user(void) {
+  achordion_task();
+}
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {

@@ -13,7 +13,8 @@ AUDIO_ENABLE = yes          # Audio output
 CUSTOM_MATRIX = yes
 ENCODER_ENABLE = yes
 DIP_SWITCH_ENABLE = yes
-
+LTO_ENABLE = no
+TAP_DANCE_ENABLE = no
 # Do not enable RGB_MATRIX_ENABLE together with RGBLIGHT_ENABLE
 RGB_MATRIX_ENABLE = no
 
